@@ -3,8 +3,8 @@ class Url < ActiveRecord::Base
   before_save :hash
 
   validates :origin, presence: true
-  validates_format_of :origin, :multiline => true, :with => /^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}$/
-  validates :shorted, uniqueness: { scope: :user }
+  validates_format_of :origin, :multiline => true, :with => /^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z][\/?]*/
+  validates :origin, uniqueness: { scope: :user }
 
   BASE_URL = 'ly.com/'
 

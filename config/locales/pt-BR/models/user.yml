@@ -7,6 +7,7 @@ pt-BR:
       user:
         email: 'E-mail'
         password: 'Senha'
+        remember_me: 'Lembrar-me'
         password_confirmation: 'Confirmação de senha'
     errors:
       models:

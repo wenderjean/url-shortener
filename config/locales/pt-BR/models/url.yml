@@ -14,3 +14,4 @@ pt-BR:
             origin:
               blank: 'deve ser informada.'
               invalid: 'não parece ser válida'
+              taken: 'Ops! Me parece que você já encurtou este mesmo endereço.'
