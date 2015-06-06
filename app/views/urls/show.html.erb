@@ -1,0 +1,18 @@
+<p>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= @url.origin %></div>
+    <div class="panel-body">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <%= @url.origin %>
+      </p>
+
+      <p>
+        <%= @url.shorted %>
+      </p>
+
+      <%= link_to t('.link.back'), urls_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</p>

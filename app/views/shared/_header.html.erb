@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top custom-nav">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to new_url_path, class: 'navbar-brand' do %>
+        <i class="glyphicon glyphicon-flag"></i>
+        URL Shortener
+      <% end %>
+
+      <% if user_signed_in? %>
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to t('.menu.my_url'), urls_path %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <% if user_signed_in? %>
+          <div class="navbar-right">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle white" data-toggle="dropdown" aria-haspopup="false" role="button" aria-expanded="false">
+                  <i class="glyphicon glyphicon-user"></i>
+                  <%= current_user.email %>
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                  <li role="presentation">
+                    <%= link_to t('devise.sessions.end.logout'), destroy_user_session_path %>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+          <div class="navbar-form navbar-right">
+            <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path, class: 'btn btn-default' %>
+            <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path, class: 'btn btn-default' %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+pt-BR:
+  activerecord:
+    models:
+      user: 'Usuário'
+      users: 'Usuários'
+    attributes:
+      user:
+        email: 'E-mail'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'deve ser informado.'
+              taken: 'informado já existe.'
+            password:
+              blank: 'deve ser informada.'
+              too_short: 'informada é muito pequena.'
+            password_confirmation:
+              confirmation: 'deve ser informada'

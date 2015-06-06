@@ -1,0 +1,10 @@
+<%= form_for(@url) do |f| %>
+  <%= get_errors @url %>
+
+  <div class="input-group">
+    <%= f.text_field :origin, placeHolder: 'Digite aqui a URL', class: 'form-control input-lg' %>
+    <span class="input-group-btn">
+      <%= f.submit 'Salvar', class: 'btn btn-default btn-lg' %>
+    </span>
+  </div>
+<% end %>

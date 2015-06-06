@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      url: 'URL'
+      urls: 'URL`s'
+    attributes:
+      url:
+        origin: 'URL'
+        shorted: 'Encurtada'
+    errors:
+      models:
+        url:
+          attributes:
+            origin:
+              blank: 'deve ser informada.'
+              invalid: 'não parece ser válida'

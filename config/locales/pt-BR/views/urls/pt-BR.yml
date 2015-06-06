@@ -1,0 +1,14 @@
+pt-BR:
+  urls:
+    index:
+      title: 'Minhas URL`s'
+      new: 'Nova URL'
+      show: "Mostrar %{url}"
+      destroy: "Excluir %{url}"
+      delete_confirmation: 'Tem certeza que deseja excluir esta URL?'
+      label_table: 'URL Encurtada'
+    new:
+      title: 'Nova URL'
+    show:
+      link:
+        back: 'Voltar'

@@ -1,0 +1,20 @@
+<p>
+  <%= render 'form' %>
+</p>
+
+<% if session[request.remote_ip] %>
+<pre>
+  Cadastre-se para manter suas URL's salvas para sempre. ;)
+</pre>
+<table class="table">
+  <tbody>
+    <% YAML.load(session[request.remote_ip]).each do |url| %>
+    <tr>
+      <td>
+        <%= link_to url.shorted, convert_to_external_path(url.origin), class: 'link' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

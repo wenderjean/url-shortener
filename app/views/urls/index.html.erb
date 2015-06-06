@@ -1,0 +1,36 @@
+<p>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= t('.title') %></div>
+    <div class="panel-body">
+      <div class="pull-right">
+        <%= link_to t('.new'), new_url_path, class: 'btn btn-default' %>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t('.label_table') %></th>
+            <th style="width: 10%;">#</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @urls.each do |url| %>
+          <tr>
+            <td>
+              <%= link_to url.shorted, convert_to_external_path(url.origin), class: 'link' %>
+            </td>
+            <td>
+              <%= link_to url, class: 'btn btn-default', title: t('.show', url: url.shorted) do %>
+                <i class="glyphicon glyphicon-eye-open"></i>
+              <% end %>
+              <%= link_to url, method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-default', title: t('.destroy', url: url) do %>
+                <i class="glyphicon glyphicon-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</p>
