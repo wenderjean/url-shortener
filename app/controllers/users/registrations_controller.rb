@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def process_urls
-    get_session.each { |url| yield(url) }
+    get_session.each { |url| yield(url) if block_given? }
     session.delete(request.remote_ip)
   end
 
