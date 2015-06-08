@@ -24,10 +24,11 @@ class UrlsController < ApplicationController
     if user_signed_in?
       @url.save
     else
-      @url.valid?
-      @url.hash
-      set_item_in_temporal_session(@url)
-      location = new_url_path
+      if @url.valid?
+        @url.hash
+        set_item_in_temporal_session(@url)
+        location = new_url_path
+      end
     end
 
     respond_with(@url, :location => location)
